@@ -1,7 +1,14 @@
 {
   "name": "react-native-particle-background",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
+  "keywords": [
+    "react-native",
+    "react",
+    "reactjs",
+    "particle",
+    "animation"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
