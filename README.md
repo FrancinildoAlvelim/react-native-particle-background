@@ -10,6 +10,7 @@ Simple particle background written 100% in React Native
 # Installation
 Run:  `npm install react-native-particle-background` or `yarn add react-native-particle-background`
 
+
 ### Usage
 
 ```javascript
@@ -40,6 +41,9 @@ const styles = StyleSheet.create({
 
 export default App;
 ```
+### Result
+
+![](https://media.giphy.com/media/eKC4dAEHSEIugGU4g2/giphy.gif)
 
 ### Todo
 
