@@ -47,5 +47,6 @@ export default App;
 
 ### Todo
 
+- [ ] Publish in npm
 - [ ] Prop validation
 - [ ] Enhance documentation
