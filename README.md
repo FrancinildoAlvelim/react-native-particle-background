@@ -50,4 +50,4 @@ export default App;
 - [x] Publish in npm 🥳
 - [ ] Prop validation
 - [ ] Enhance documentation
-- [ ] Enhance performance (keeping pure react native <3)
+- [ ] Enhance performance (keeping pure react native :D)
