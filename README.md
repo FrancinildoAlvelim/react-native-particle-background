@@ -47,6 +47,7 @@ export default App;
 
 ### Todo
 
-- [ ] Publish in npm
+- [x] Publish in npm 🥳
 - [ ] Prop validation
 - [ ] Enhance documentation
+- [ ] Enhance performance (keeping pure react native <3)
