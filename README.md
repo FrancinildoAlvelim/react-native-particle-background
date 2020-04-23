@@ -1,8 +1,7 @@
+# React Native Particle Background
 
 <h1 align="center">
   <img src="https://res.cloudinary.com/francinildo/image/upload/v1568660959/Grupo_1.png" />
-  <br>
-  React Native Particle Background
 </h1>
 
 Simple particle background written 100% in React Native
