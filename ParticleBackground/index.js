@@ -7,7 +7,8 @@ const ParticleBackground = ({
   particleSize,
   particleDispersion,
   particleColor,
-  backgroundColor
+  backgroundColor,
+  containerStyle
 }) => {
   const [particles, setParticles] = useState([]);
   const [componentDimensions, setComponentDimensions] = useState({
@@ -57,7 +58,7 @@ const ParticleBackground = ({
 
   return (
     <View
-      style={[styles.container, { backgroundColor }]}
+      style={[containerStyle, { backgroundColor }]}
       onLayout={setDimensions}
     >
       {particles.map(({ x, y, size }, index) => (
@@ -74,13 +75,5 @@ const ParticleBackground = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    height: "100%",
-    backgroundColor: "black"
-  }
-});
 
 export default ParticleBackground;
