@@ -13,40 +13,27 @@ const Particle = ({
   const animatedOpacity = useRef(
     new Animated.Value(randomIntFromInterval(0, 1))
   ).current;
-  const animatedPosition = useRef(new Animated.Value(-1)).current;
+  const animatedPosition = useRef(new Animated.Value(0)).current;
 
   const animationTiming = randomIntFromInterval(800, 1800);
 
-  const loopBouncingAnimate = () => {
-    let reversed = false;
-    setInterval(() => {
-      reversed = !reversed;
-      Animated.parallel([
-        Animated.timing(animatedPosition, {
-          toValue: reversed ? 0 : 1,
-          duration: 20000,
-          easing: Easing.out(Easing.quad),
-          useNativeDriver: true
-        }),
-        Animated.timing(animatedOpacity, {
-          toValue: reversed ? 0 : 1,
-          duration: animationTiming,
-          useNativeDriver: true
-        })
-      ]).start();
-    }, animationTiming);
-  };
-
-  /*  const runInitialAnimation = cb => {
-    requestAnimationFrame(() => {
+  const loopBouncingAnimate = (reversed = false) => {
+    Animated.parallel([
       Animated.timing(animatedPosition, {
-        toValue: 0,
-        duration: randomIntFromInterval(4000, 8000),
-        easing: Easing.elastic(1),
+        toValue: reversed ? 0 : 1,
+        duration: 20000,
+        easing: Easing.out(Easing.quad),
         useNativeDriver: true
-      }).start(cb);
-    });
-  }; */
+      }),
+      Animated.timing(animatedOpacity, {
+        toValue: reversed ? 0 : 1,
+        duration: animationTiming,
+        useNativeDriver: true
+      })
+    ]).start( ()=>{ 
+      loopBouncingAnimate(!reversed)
+    } );
+  };
 
   useEffect(() => {
     loopBouncingAnimate(loopBouncingAnimate);
@@ -83,7 +70,7 @@ const Particle = ({
             { translateX }
           ]
         },
-        styles.container,
+        defaultStyles.container,
         {
           top: initialY,
           left: initialX,
@@ -96,7 +83,7 @@ const Particle = ({
   );
 };
 
-const styles = StyleSheet.create({
+const defaultStyles = StyleSheet.create({
   container: {
     width: 20,
     height: 20,
